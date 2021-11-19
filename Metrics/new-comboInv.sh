@@ -14,17 +14,17 @@ date > duration_slow.txt
 #BLCOLORS="${CATALOG}/BLColors.txt"
 #BLCATEGORY="${CATALOG}/BLCategories.txt"
 #BLPARTS="${CATALOG}/BLParts.txt"
-#BLMINIFIGS="${CATALOG}/BLMinifigs.txt"
+#BLMINIFIGS="${CATALOG}/BLMinifigures.txt"
 #XML="XMLs"
 #TEST="XMLs/Test"
 #INVENTORY="./Inventory.csv"
 
 echo -e "\nNormalizing the XML files to add a Color field for all non-part pieces ..."
 
-for file in `ls -ltr ${TEST_XML}/*.xml | awk '{print $9}'`
-#for file in `ls -ltr ${XML}/*.xml | awk '{print $9}'`
+#for file in `ls -ltr ${TEST_XML}/*.xml | awk '{print $9}'`
+for file in `find ${XML} -name *.xml | grep -v Test`
     do
-        /usr/bin/xmlstarlet ed --inplace -s '//INVENTORY/ITEM[not(COLOR)]' -t elem -n 'COLOR' -v 'NA' $file
+        /home/linuxbrew/.linuxbrew/bin/xmlstarlet ed --inplace -s '//INVENTORY/ITEM[not(COLOR)]' -t elem -n 'COLOR' -v 'NA' $file
         clr=( $(grep -i color $file | cut -f2 -d">" | cut -f1 -d"<") )
         qty=( $(grep -i minqty $file | cut -f2 -d">" | cut -f1 -d"<") )
         item=( $(grep -i itemid $file | cut -f2 -d">" | cut -f1 -d"<") )
@@ -54,19 +54,19 @@ echo -e "Referencing BrickLink Catalog to populate final inventory ...\n"
 
 for i in `seq 0 1 $(( $itemtotal - 1 ))`
     do
-        if [[ ! -z `grep ${itemid[$i]} Catalog/BLParts.xml` ]]
+        if [[ ! -z `grep ${itemid[$i]} BLCatalog/BLParts.xml` ]]
         then
             echo -e "Fetching details for ${itemid[$i]} from Parts Catalog. Item ${i} in ${itemtotal}"
-            linenum=`cut -d $'\t' -f3 Catalog/BLParts.txt | grep -xnF ${itemid[$i]} | cut -d":" -f1`
-            itemcategoryname=`sed -n "${linenum}p" Catalog/BLParts.txt | cut -d $'\t' -f2`
-            itemname=`sed -n "${linenum}p" Catalog/BLParts.txt | cut -d $'\t' -f4 | sed 's/[[:space:]]*$//g'`
-            itemcolorname=`grep -w "<COLOR>${colorid[$i]}</COLOR>" Catalog/BLColors.xml -A 1 | tail -1 | cut -d">" -f2 | cut -d"<" -f1`
+            linenum=`cut -d $'\t' -f3 BLCatalog/BLParts.txt | grep -xnF ${itemid[$i]} | cut -d":" -f1`
+            itemcategoryname=`sed -n "${linenum}p" BLCatalog/BLParts.txt | cut -d $'\t' -f2`
+            itemname=`sed -n "${linenum}p" BLCatalog/BLParts.txt | cut -d $'\t' -f4 | sed 's/[[:space:]]*$//g'`
+            itemcolorname=`grep -w "<COLOR>${colorid[$i]}</COLOR>" BLCatalog/BLColors.xml -A 1 | tail -1 | cut -d">" -f2 | cut -d"<" -f1`
         else
             echo -e "Fetching details for ${itemid[$i]} from Minfigs Catalog. Item ${i} in ${itemtotal}"
-            linenum=`cut -d $'\t' -f3 Catalog/BLMinifigs.txt | grep -xnF ${itemid[$i]} | cut -d":" -f1`
-            itemcategoryname=`sed -n "${linenum}p" Catalog/BLMinifigs.txt | cut -d $'\t' -f2`
-            itemname=`sed -n "${linenum}p" Catalog/BLMinifigs.txt | cut -d $'\t' -f4 | sed 's/[[:space:]]*$//g'`
-            #itemcolorname=`grep -w "<COLOR>${colorid[$i]}</COLOR>" ../Catalog/BLColors.xml -A 1 | tail -1 | cut -d">" -f2 | cut -d"<" -f1`
+            linenum=`cut -d $'\t' -f3 BLCatalog/BLMinifigures.txt | grep -xnF ${itemid[$i]} | cut -d":" -f1`
+            itemcategoryname=`sed -n "${linenum}p" BLCatalog/BLMinifigures.txt | cut -d $'\t' -f2`
+            itemname=`sed -n "${linenum}p" BLCatalog/BLMinifigures.txt | cut -d $'\t' -f4 | sed 's/[[:space:]]*$//g'`
+            #itemcolorname=`grep -w "<COLOR>${colorid[$i]}</COLOR>" BLCatalog/BLColors.xml -A 1 | tail -1 | cut -d">" -f2 | cut -d"<" -f1`
             itemcolorname="NA"
         fi
 
