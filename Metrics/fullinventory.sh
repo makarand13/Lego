@@ -61,18 +61,28 @@ for i in `seq 0 1 $(( $itemtotal - 1 ))`
             itemcategoryname=`sed -n "${linenum}p" BLCatalog/BLParts.txt | cut -d $'\t' -f2`
             itemname=`sed -n "${linenum}p" BLCatalog/BLParts.txt | cut -d $'\t' -f4 | sed 's/[[:space:]]*$//g'`
             itemcolorname=`grep -w "<COLOR>${colorid[$i]}</COLOR>" BLCatalog/BLColors.xml -A 1 | tail -1 | cut -d">" -f2 | cut -d"<" -f1`
-        else
+        elif [[ ! -z `grep ${itemid[$i]} BLCatalog/BLMinifigures.xml` ]]
+        then
             echo -e "Fetching details for ${itemid[$i]} from Minfigs Catalog. Item ${i} in ${itemtotal}"
             linenum=`cut -d $'\t' -f3 BLCatalog/BLMinifigures.txt | grep -xnF ${itemid[$i]} | cut -d":" -f1`
             itemcategoryname=`sed -n "${linenum}p" BLCatalog/BLMinifigures.txt | cut -d $'\t' -f2`
             itemname=`sed -n "${linenum}p" BLCatalog/BLMinifigures.txt | cut -d $'\t' -f4 | sed 's/[[:space:]]*$//g'`
             #itemcolorname=`grep -w "<COLOR>${colorid[$i]}</COLOR>" BLCatalog/BLColors.xml -A 1 | tail -1 | cut -d">" -f2 | cut -d"<" -f1`
             itemcolorname="NA"
+        elif [[ ! -z `grep ${itemid[$i]} BLCatalog/BLGear.xml` ]]
+        then
+            echo -e "Fetching details for ${itemid[$i]} from Gears Catalog. Item ${i} in ${itemtotal}"
+            linenum=`cut -d $'\t' -f3 BLCatalog/BLGear.txt | grep -xnF ${itemid[$i]} | cut -d":" -f1`
+            itemcategoryname=`sed -n "${linenum}p" BLCatalog/BLGear.txt | cut -d $'\t' -f2`
+            itemname=`sed -n "${linenum}p" BLCatalog/BLGear.txt | cut -d $'\t' -f4 | sed 's/[[:space:]]*$//g'`
+            itemcolorname=`grep -w "<COLOR>${colorid[$i]}</COLOR>" BLCatalog/BLColors.xml -A 1 | tail -1 | cut -d">" -f2 | cut -d"<" -f1`
+        else
+            echo -e "${itemid[$i]} is not in any catalog" >> gears.txt
         fi
 
         echo -e $itemcategoryname";"${colorid[$i]}";"$itemcolorname";"${itemid[$i]}";"$itemname";"${itemqty[$i]} >> Inventory.csv
     done
 
 echo -e "... Done\n"
-rm temp*.csv
+#rm temp*.csv
 date >> duration_slow.txt
