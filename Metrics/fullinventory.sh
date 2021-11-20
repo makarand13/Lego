@@ -8,7 +8,6 @@
 SCRIPT_ROOT=$(cd "$(dirname "$0")" && pwd)
 TEST_XML=`echo ${SCRIPT_ROOT}"/XMLs/Test"`
 XML=`echo ${SCRIPT_ROOT}"/XMLs"`
-date > duration_slow.txt
 
 #CATALOG="Catalog"
 #BLCOLORS="${CATALOG}/BLColors.txt"
@@ -61,6 +60,10 @@ for i in `seq 0 1 $(( $itemtotal - 1 ))`
             itemcategoryname=`sed -n "${linenum}p" BLCatalog/BLParts.txt | cut -d $'\t' -f2`
             itemname=`sed -n "${linenum}p" BLCatalog/BLParts.txt | cut -d $'\t' -f4 | sed 's/[[:space:]]*$//g'`
             itemcolorname=`grep -w "<COLOR>${colorid[$i]}</COLOR>" BLCatalog/BLColors.xml -A 1 | tail -1 | cut -d">" -f2 | cut -d"<" -f1`
+            if [[ -z ${itemcolorname} ]]
+            then
+                itemcolorname="NA"
+            fi
         elif [[ ! -z `grep ${itemid[$i]} BLCatalog/BLMinifigures.xml` ]]
         then
             echo -e "Fetching details for ${itemid[$i]} from Minfigs Catalog. Item ${i} in ${itemtotal}"
@@ -84,5 +87,4 @@ for i in `seq 0 1 $(( $itemtotal - 1 ))`
     done
 
 echo -e "... Done\n"
-#rm temp*.csv
-date >> duration_slow.txt
+rm temp*.csv
