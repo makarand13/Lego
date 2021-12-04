@@ -55,3 +55,5 @@
 | 8057844 | sherriesatic (US) | 19-Jun-2017 | 18 | 257 |
 | 8057845 | PrimoBricks (US) | 19-Jun-2017 | 8 | 30 |
 | 8057848 | 101 bricks on the wall (US) | 19-Jun-2017 | 6 | 13 |
+
+## Total Pieces - **17271**
