@@ -8,6 +8,7 @@
 SCRIPT_ROOT=$(cd "$(dirname "$0")" && pwd)
 TEST_XML=`echo ${SCRIPT_ROOT}"/XMLs/Test"`
 XML=`echo ${SCRIPT_ROOT}"/XMLs"`
+today=$(date +"%Y-%m-%d")
 
 #CATALOG="Catalog"
 #BLCOLORS="${CATALOG}/BLColors.txt"
@@ -47,7 +48,7 @@ colorid=(`cat temp2.csv | cut -d"," -f2`)
 itemqty=(`cat temp2.csv | cut -d"," -f3`)
 echo -e "... Done\n"
 
-echo -e "Category;ColorID;Color;ItemID;Item;Quantity" > Inventory.csv
+echo -e "Category;ColorID;Color;ItemID;Item;Quantity" > Inventory-${today}.csv
 
 echo -e "Referencing BrickLink Catalog to populate final inventory ...\n"
 
@@ -83,7 +84,7 @@ for i in `seq 0 1 $(( $itemtotal - 1 ))`
             echo -e "${itemid[$i]} is not in any catalog" >> gears.txt
         fi
 
-        echo -e $itemcategoryname";"${colorid[$i]}";"$itemcolorname";"${itemid[$i]}";"$itemname";"${itemqty[$i]} >> Inventory.csv
+        echo -e $itemcategoryname";"${colorid[$i]}";"$itemcolorname";"${itemid[$i]}";"$itemname";"${itemqty[$i]} >> Inventory-${today}.csv
     done
 
 echo -e "... Done\n"
