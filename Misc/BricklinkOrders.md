@@ -2,6 +2,13 @@
 
 | Order # | Seller | Order Date | Lots | Pieces |
 |---------|--------|------------|------|--------|
+| 22109396 | Itty Bitty Bricks (AU) | 8-May-2023 | 38 | 189 |
+| 20822495 | Itty Bitty Bricks (AU) | 17-Dec-2022 | 48 | 190 |
+| 19013670 | Itty Bitty Bricks (AU) | 27-Apr-2022 | 31 | 116 |
+| 18997209 | Once Upon A Block (AU) | 25-Apr-2022 | 45 | 209 |
+| 18997195 | Brick Trove (AU) | 25-Apr-2022 | 134 | 898 |
+| 18997185 | Aussie Brickster (AU) | 25-Apr-2022 | 19 | 153 |
+| 17838761 | Itty Bitty Bricks (AU) | 12-Dec-2021 | 64 | 342 |
 | 17629890 | Brick Trove (AU) | 19-Nov-2021 | 58 | 373 |
 | 17629889 | Once Upon A Block (AU) | 19-Nov-2021| 17 | 132 |
 | 17629880 | Itty Bitty Bricks (AU) | 19-Nov-2021 | 146 | 1062 |
