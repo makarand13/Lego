@@ -71,11 +71,12 @@ Category ID	Category Name
 1028	2019
 1066	2020
 1119	2021
+1213	2022
+1249	2023
 516	4 Juniors
 316	4.5V
 315	9V
 1007	Accessory Pack
-990	Accessory, Human Tool
 173	Action Wheelers
 766	Activity Book
 714	Advent
@@ -89,8 +90,10 @@ Category ID	Category Name
 1012	Aircraft, Decorated
 969	Airjitzu Flyers
 325	Airport
+1187	Aladdin
 762	Alien Conquest
 170	Alpha Team
+1285	Animal Crossing
 86	Animal, Accessory
 146	Animal, Air
 148	Animal, Body Part
@@ -106,6 +109,7 @@ Category ID	Category Name
 1055	Animals Series 6
 854	Ant-Man
 1074	Ant-Man and the Wasp
+1259	Ant-Man and the Wasp Quantumania
 1	Antenna
 973	Aquaman
 260	Aquanauts
@@ -119,8 +123,10 @@ Category ID	Category Name
 480	Arctic
 322	Arctic Technic
 45	Arm
+1272	Art
 733	Atlantis
-574	Avatar
+1236	Avatar
+574	Avatar The Last Airbender
 830	Avengers
 844	Avengers Age of Ultron
 828	Avengers Assemble
@@ -129,6 +135,7 @@ Category ID	Category Name
 293	Baby
 918	Back to the Future
 498	Backpacks & Lunchboxes
+1148	Bag Tag
 978	Ball
 1143	Bandmates Series 1
 1150	Bandmates Series 2
@@ -149,18 +156,21 @@ Category ID	Category Name
 725	Battle Vehicles
 464	Bead
 1142	BeatBox
+1180	Beauty and the Beast
 648	Bedding
+1212	Beetlejuice
 48	Belville
 412	Belville, Figure Accessory
 731	Ben 10
 1020	BigFig Series 1
 1071	BigFig Series 2
-273	Bionicle
-235	Bionicle, Kanohi Mask
+273	BIONICLE
+235	BIONICLE, Kanohi Mask
 1000	Birthday
 289	Black Falcons
 278	Black Knights
 929	Black Panther
+1244	Black Panther Wakanda Forever
 1079	Black Widow
 300	Blacktron I
 301	Blacktron II
@@ -169,12 +179,16 @@ Category ID	Category Name
 650	Bohrok
 651	Bohrok Va
 652	Bohrok-Kal
-921	BOOST
+921	Boost
 968	Booster Pack
 1122	Botanical Collection
+1139	Bracelet
 4	Bracket
+1254	Braille Bricks
+1185	Brave
 5	Brick
 1103	Brick Sketches
+1253	Brick, Braille
 118	Brick, Decorated
 7	Brick, Modified
 535	Brick, Modified, Decorated
@@ -182,6 +196,8 @@ Category ID	Category Name
 8	Brick, Round
 736	Brick, Round, Decorated
 903	BrickHeadz
+1196	BrickLink
+1197	BrickLink Designer Program
 1140	BricQ
 1132	Build-A-Minifigure
 859	Buildable Figures
@@ -202,14 +218,15 @@ Category ID	Category Name
 1060	Cardboard Sleeve
 618	Cargo
 748	Cars
+1172	Cars 2
+1171	Cars 3
 9	Castle
 991	Chain
 696	Chamber of Secrets
-1114	Character Pack Series 1
-1126	Character Pack Series 2
-1158	Character Pack Series 3
 955	Chinese New Year
+1219	Chip &#39;n&#39; Dale: Rescue Rangers
 391	Christmas
+1184	Cinderella
 624	Circus
 919	Cities of Wonders
 518	City
@@ -240,24 +257,30 @@ Category ID	Category Name
 643	Container, Decorated
 633	Control Lab
 73	Conveyor
+1200	Core
 275	Cowboys
 74	Crane
 171	Creator
+1068	Creator Expert
 726	Creature
 279	Crusaders
+1228	Crystalized
 576	Curriculum Activity Book
 11	Cylinder
 926	Cylinder, Decorated
 280	Dark Forest
 898	Dawn of Justice
+1169	Day of the Dead
 951	Day of the Departed
 893	DC Super Hero Girls
 1075	DC Super Heroes
+1178	Dead Men Tell No Tales
+1239	Deathly Hallows
 1008	Decoration
 855	Deep Sea Explorers
 247	Desert
 486	Designer Sets
-879	DFB Series
+879	Deutscher Fussball-Bund / DFB
 860	Dimensions
 862	Dimensions Wave 1
 864	Dimensions Wave 2
@@ -273,52 +296,61 @@ Category ID	Category Name
 563	Dino Attack
 249	Dino Island
 183	Dinosaurs
+1224	Diorama Collection
 482	Discovery
 116	Dish
 779	Dish, Decorated
 878	Disney
+1263	Disney 100
+1280	Disney Junior
 773	Disney Princess
+1170	Disney Series 1
 1035	Disney Series 2
-798	Disney&#39;s Planes
+1256	Disney Villains
 722	Disney's Baby Mickey
 149	Disney's Mickey Mouse
 326	Divers
 853	Doc McStuffins
 886	Doctor Strange
+1246	Doctor Strange in the Multiverse of Madness
 863	Doctor Who
 587	Dolls
+1222	Dominion
+1273	Donkey Kong
 12	Door
 642	Door, Decorated
 540	Door, Frame
 523	Dora the Explorer
 1076	Dots
-1148	Dots Bag Tags
-1139	Dots Bracelets
 281	Dragon Knights
 964	Dragon Masters
+1264	Dragons Rising Season 1
+1268	DREAMZzz
 720	Drome Racers
 1149	DuckTales
-167	Duplo
-640	Duplo, Aircraft
-420	Duplo, Animal
-846	Duplo, Baseplate
-639	Duplo, Boat
-417	Duplo, Brick
-440	Duplo, Brick, Decorated
-506	Duplo, Brick, Promotional
-1121	Duplo, Building
-845	Duplo, Cloth
-707	Duplo, Doll
-585	Duplo, Figure Wear & Utensil
-1038	Duplo, Food
-641	Duplo, Furniture
-1037	Duplo, Plant
-487	Duplo, Plate
-538	Duplo, Tile, Decorated
-524	Duplo, Toolo
-612	Duplo, Town
-441	Duplo, Train
-488	Duplo, Vehicle
+1286	Dune
+167	DUPLO
+640	DUPLO, Aircraft
+420	DUPLO, Animal
+846	DUPLO, Baseplate
+639	DUPLO, Boat
+417	DUPLO, Brick
+440	DUPLO, Brick, Decorated
+506	DUPLO, Brick, Promotional
+1121	DUPLO, Building
+845	DUPLO, Cloth
+707	DUPLO, Doll
+585	DUPLO, Figure Wear & Utensil
+1038	DUPLO, Food
+641	DUPLO, Furniture
+1037	DUPLO, Plant
+487	DUPLO, Plate
+538	DUPLO, Tile, Decorated
+524	DUPLO, Toolo
+612	DUPLO, Town
+441	DUPLO, Train
+488	DUPLO, Vehicle
+1209	E.T.
 392	Easter
 166	Educational & Dacta
 408	eLAB
@@ -331,12 +363,12 @@ Category ID	Category Name
 735	Electric, Wire & Connector
 646	Electronics
 843	Elves
+1168	Encanto
 994	Energy Effect
 1006	Envelope & Letter
 1138	Eternals
 800	EV3
 568	Exo-Force
-1068	Expert
 387	Expert Builder
 437	Explore
 509	Explore Being Me
@@ -373,6 +405,7 @@ Category ID	Category Name
 1062	Frozen II
 822	Fusion
 303	Futuron
+1266	Gabby&#39;s Dollhouse
 791	Galaxy Squad
 444	Galidor
 252	Game
@@ -381,6 +414,7 @@ Category ID	Category Name
 1099	Garage, TEST
 597	Gas Station
 421	Gears
+1250	Ghost Rider
 870	Ghostbusters
 690	Glatorian
 724	Glatorian Legends
@@ -390,14 +424,19 @@ Category ID	Category Name
 1002	Graduation
 987	Grand Opening
 501	Gravity Games
+1208	Gremlins
 816	Guardians of the Galaxy
-906	Guardians of the Galaxy Vol.2
+906	Guardians of the Galaxy Vol. 2
+1258	Guardians of the Galaxy Vol. 3
 1004	Guide Book
 1107	Half-Blood Prince
 393	Halloween
 588	Harbor
 227	Harry Potter
+1194	Harry Potter Series 1
+1195	Harry Potter Series 2
 1124	Heart Box
+1257	Helmet Collection
 749	Hero Factory
 750	Heroes
 763	Heroica
@@ -411,6 +450,7 @@ Category ID	Category Name
 390	Holiday & Event
 85	Homemaker
 112	Hook
+1227	Horizon
 87	Hose
 530	Hose, Pneumatic 4mm D.
 522	Hose, Ribbed 7mm D.
@@ -419,7 +459,9 @@ Category ID	Category Name
 527	Hose, Soft Axle
 327	Hospital
 398	Human Furniture
+1215	Human Jewelry
 525	Human Toiletries
+990	Human Tool
 963	Hunted
 263	Hydronauts
 304	Ice Planet 2002
@@ -434,6 +476,7 @@ Category ID	Category Name
 305	Insectoids
 497	Inventor
 1091	Iron Man
+1231	Iron Man 2
 829	Iron Man 3
 449	Island Xtreme Stunts
 271	Islanders
@@ -443,12 +486,14 @@ Category ID	Category Name
 429	Jumbo Bricks
 248	Jungle
 809	Juniors
+1223	Jurassic Park
 256	Jurassic Park III
 850	Jurassic World
 832	Justice League
 334	Key Chain
 700	Kingdom of the Crystal Skull
 744	Kingdoms
+1211	Knight Rider
 283	Knights Kingdom I
 536	Knights Kingdom II
 90	Ladder
@@ -461,7 +506,7 @@ Category ID	Category Name
 1013	Legacy
 1036	Legend of Isla Nublar
 267	Legends
-787	Legends of Chima
+787	LEGENDS OF CHIMA
 922	Legends of Tomorrow
 976	LEGO Brand
 625	LEGO Brand Store
@@ -472,37 +517,45 @@ Category ID	Category Name
 817	LEGO Ideas &#40;CUUSOO&#41;
 979	LEGO Inside Tour
 1065	LEGO Originals
-277	Legoland
-572	Legoland Parks
+277	LEGOLAND
+572	LEGOLAND Parks
 24	Lever
 172	Life on Mars
+1221	Lightyear
 291	Lion Knights
 292	Little Forest Friends
 507	Little Robots
 1144	Looney Tunes
 1112	Luggage & Luggage Accessories
+1192	Luigi&#39;s Mansion
 306	M:Tron
 462	Magazine
-1086	Magazine, Bionicle
+1086	Magazine, BIONICLE
 1021	Magazine, City
 1087	Magazine, Disney Princess
+1269	Magazine, DREAMZzz
+1232	Magazine, DUPLO
 1085	Magazine, Elves
 1109	Magazine, Explorer
 1022	Magazine, Friends
 1083	Magazine, Hidden Side
 1084	Magazine, Jurassic World
-1026	Magazine, Legends of Chima
+1026	Magazine, LEGENDS OF CHIMA
+1167	Magazine, LEGO Club
+1261	Magazine, LEGO Life
 1165	Magazine, Minecraft
-1023	Magazine, Nexo Knights
-1024	Magazine, Ninjago
+1023	Magazine, NEXO KNIGHTS
+1024	Magazine, NINJAGO
 1025	Magazine, Star Wars
 1063	Magazine, Super Heroes
+1220	Magazine, Technic
 1088	Magazine, The LEGO Movie 2
 14	Magnet
 897	Man of Steel
 1120	March of the Oni
 592	Mars Mission
-1159	Marvel Studios
+1159	Marvel Studios Series 1
+1274	Marvel Studios Series 2
 764	Master Builder Academy
 1117	Master Builder Series
 1106	Master of the Mountain
@@ -513,10 +566,24 @@ Category ID	Category Name
 656	Matoran of Metru Nui
 657	Matoran of Voya Nui
 513	Media Audio & Video
+1282	Mickey
+1182	Mickey and Friends
+1279	Mickey and the Roadster Racers
+1276	Mickey Mouse & Friends
+1277	Mickey Mouse Clubhouse
 1082	Micro Doll, Body Part
+806	Microfighters Series 1
+835	Microfighters Series 2
+866	Microfighters Series 3
+900	Microfighters Series 4
+928	Microfighters Series 5
+1009	Microfighters Series 6
+1067	Microfighters Series 7
+1127	Microfighters Series 8
+1206	Midway Arcade
 874	Mighty Micros
 867	Miles From Tomorrowland
-59	Mindstorms
+59	MINDSTORMS
 801	Minecraft
 1096	Minecraft Dungeons
 481	Mini
@@ -524,9 +591,11 @@ Category ID	Category Name
 912	Mini Doll, Body Wear
 913	Mini Doll, Hair
 914	Mini Doll, Head
+1283	Mini Doll, Head, Modified
 915	Mini Doll, Headgear
 916	Mini Doll, Legs
 917	Mini Doll, Torso
+1252	Mini Doll, Utensil 
 20	Minifigure, Body Part
 142	Minifigure, Body Wear
 847	Minifigure, Hair
@@ -547,26 +616,29 @@ Category ID	Category Name
 19	Minifigure, Weapon
 1070	Minions The Rise Of Gru
 394	Minitalia
+1278	Minnie
 1110	Miscellaneous Licensed
 550	Mission Deep Freeze
 549	Mission Deep Sea
+1204	Mission: Impossible
+1230	Missions
 658	Mistika
 1040	Mix
-808	Mixels
-819	Mixels Series 1
-820	Mixels Series 2
-821	Mixels Series 3
-837	Mixels Series 4
-851	Mixels Series 5
-861	Mixels Series 6
-873	Mixels Series 7
-882	Mixels Series 8
-889	Mixels Series 9
+808	MIXELS
+819	MIXELS Series 1
+820	MIXELS Series 2
+821	MIXELS Series 3
+837	MIXELS Series 4
+851	MIXELS Series 5
+861	MIXELS Series 6
+873	MIXELS Series 7
+882	MIXELS Series 8
+889	MIXELS Series 9
 894	Moana
 682	Model
 432	Model Maker
 60	Model Team
-710	Modular Buildings
+710	Modular Buildings Collection
 727	Modulex
 729	Modulex, Brick
 728	Modulex, Tile, Decorated
@@ -579,11 +651,12 @@ Category ID	Category Name
 433	Mosaic
 504	Motor, Non-Electric
 802	Muji
+1188	Mulan
 467	My Own Creation
 694	My Own Train
-868	Nexo Knights
+868	NEXO KNIGHTS
 284	Ninja
-759	Ninjago
+759	NINJAGO
 630	NXT
 383	Off-Road
 1113	Office Supplies
@@ -601,22 +674,27 @@ Category ID	Category Name
 995	Party Supplies
 445	Patch & Pin
 241	Pen
+1260	Peter Pan & Wendy
 1137	Pets
 659	Phantoka
 757	Pharaoh's Quest
 521	Photo Frame & Holder
-1131	Pickable Model
+1131	Pick-a-Brick Model
+1193	Pick-a-Model
 660	Piraka
 61	Pirates
 688	Pirates I
 687	Pirates II
 841	Pirates III
+1267	Pirates IV
 761	Pirates of the Caribbean
 1081	Placeholder
-772	Planet Series 1
-783	Planet Series 2
-793	Planet Series 3
-794	Planet Series 4
+798	Planes
+1281	Planes Fire & Rescue
+772	Planets Series 1
+783	Planets Series 2
+793	Planets Series 3
+794	Planets Series 4
 25	Plant
 95	Plant, Tree
 161	Plastic
@@ -633,6 +711,7 @@ Category ID	Category Name
 661	Playsets
 159	Pneumatic
 323	Police
+1201	Portal 2
 949	Possession
 251	Post Office
 503	Poster
@@ -640,7 +719,6 @@ Category ID	Category Name
 689	Power Miners
 691	Power Racers
 1016	Powered Up
-925	Powerpuff Girls
 1077	Prime Empire
 294	Primo
 734	Prince of Persia
@@ -668,6 +746,7 @@ Category ID	Category Name
 947	Rebooted
 686	Recreation
 329	Res-Q
+1271	Reserved
 539	Retail Display
 848	Retail Display Case
 526	Retail Display Flag
@@ -688,6 +767,7 @@ Category ID	Category Name
 395	Samsonite
 102	Scala
 413	Scala, Figure Accessory
+1216	School
 447	School Supplies
 856	Scooby-Doo
 169	Sculptures
@@ -714,10 +794,14 @@ Category ID	Category Name
 1058	Series 19 Minifigures
 1089	Series 20 Minifigures
 1129	Series 21 Minifigures
-803	Serious Play
+1199	Series 22 Minifigures
+1241	Series 23 Minifigures
+1248	Series 24 Minifigures
+803	SERIOUS PLAY
 63	Service Packs
 1152	Shang-Chi
 950	Skybound
+1186	Sleeping Beauty
 999	Slide
 31	Slope
 438	Slope, Curved
@@ -726,10 +810,12 @@ Category ID	Category Name
 32	Slope, Inverted
 776	Slope, Inverted, Decorated
 1005	Smoking Supplies
+1190	Snow White
 224	Soccer
 836	Sofia the First
 439	Soft Bricks
 180	Software
+1203	Sonic the Hedgehog
 953	Sons of Garmadon
 695	Sorcerer's Stone
 34	Space
@@ -739,7 +825,7 @@ Category ID	Category Name
 330	Space Port
 961	Special Assembly
 632	Special Element Sets
-842	Speed Champions
+842	SPEED CHAMPIONS
 608	Speed Racer
 386	Speed Slammers
 469	Spider-Man
@@ -748,6 +834,7 @@ Category ID	Category Name
 1033	Spider-Man Far From Home
 956	Spider-Man Homecoming
 1162	Spider-Man No Way Home
+1198	Spidey and his Amazing Friends
 1045	SPIKE Prime
 1014	Spinjitzu
 967	Spinjitzu Masters
@@ -762,6 +849,8 @@ Category ID	Category Name
 103	Stairs
 1145	Stamp
 65	Star Wars
+1270	Star Wars Ahsoka
+1242	Star Wars Andor
 1029	Star Wars Battlefront
 257	Star Wars Episode 1
 381	Star Wars Episode 2
@@ -771,26 +860,26 @@ Category ID	Category Name
 923	Star Wars Episode 8
 1057	Star Wars Episode 9
 1105	Star Wars Galaxy&#39;s Edge
+1243	Star Wars Jedi: Fallen Order
+1233	Star Wars Knights of the Old Republic
 834	Star Wars Legends
-806	Star Wars Microfighters Series 1
-835	Star Wars Microfighters Series 2
-866	Star Wars Microfighters Series 3
-900	Star Wars Microfighters Series 4
-928	Star Wars Microfighters Series 5
-1009	Star Wars Microfighters Series 6
-1067	Star Wars Microfighters Series 7
-1127	Star Wars Microfighters Series 8
-814	Star Wars Old Republic
+1265	Star Wars Mechs
+1237	Star Wars Obi-Wan Kenobi
 607	Star Wars Other
 818	Star Wars Rebels
 1031	Star Wars Resistance
 888	Star Wars Rogue One
+1235	Star Wars Secrets of the Empire
 960	Star Wars Solo
 1153	Star Wars The Bad Batch
+1217	Star Wars The Book of Boba Fett
 635	Star Wars The Clone Wars
+1234	Star Wars The Force Unleashed
 908	Star Wars The Freemaker Adventures
 1061	Star Wars The Mandalorian
+814	Star Wars The Old Republic
 813	Star Wars Yoda Chronicles
+1262	Star Wars Young Jedi Adventures
 742	Stars
 1102	Sticker Book
 160	Sticker Sheet
@@ -811,6 +900,12 @@ Category ID	Category Name
 1134	Super Mario Expansion Set
 1133	Super Mario Maker Set
 1135	Super Mario Power-Up Pack
+1114	Super Mario Series 1
+1126	Super Mario Series 2
+1158	Super Mario Series 3
+1191	Super Mario Series 4
+1240	Super Mario Series 5
+1247	Super Mario Series 6
 1161	Super Mario Starter Course
 831	Superman
 397	Supplemental
@@ -818,6 +913,7 @@ Category ID	Category Name
 106	Tail
 741	Tail, Decorated
 962	Tangled
+1183	Tangled The Series
 107	Tap
 785	Team GB
 36	Technic
@@ -837,9 +933,11 @@ Category ID	Category Name
 140	Technic, Plate
 542	Technic, Shock Absorber
 141	Technic, Steering
+1207	Teen Titans Go!
 790	Teenage Mutant Ninja Turtles
 702	Temple of Doom
 824	Thanksgiving
+1205	The A-Team
 876	The Angry Birds Movie
 1073	The Avengers
 1164	The Batman
@@ -847,20 +945,34 @@ Category ID	Category Name
 896	The Dark Knight Trilogy
 946	The Final Battle
 944	The Golden Weapons
+1210	The Goonies
 952	The Hands of Time
 788	The Hobbit
-789	The Hobbit and the Lord of the Rings
+789	The Hobbit and The Lord of the Rings
 957	The Incredibles
+1245	The Infinity Saga
 1136	The Island
 892	The LEGO Batman Movie
+1175	The LEGO Batman Movie Series 1
+1173	The LEGO Batman Movie Series 2
 804	The LEGO Movie
 971	The LEGO Movie 2
-920	The LEGO Ninjago Movie
+920	The LEGO NINJAGO Movie
+1181	The Little Mermaid
 795	The Lone Ranger
 782	The Lord of the Rings
+1275	The Marvels
+1226	The Muppets
+1176	The Nightmare Before Christmas
+925	The Powerpuff Girls
+1189	The Princess and the Frog
 807	The Simpsons
+1174	The Simpsons Series 1
 849	The Simpsons Series 2
+1251	The Way of Water
+1202	The Wizard of Oz
 562	Thomas & Friends
+1225	Thor Love and Thunder
 909	Thor Ragnarok
 385	Throwbot / Slizer
 514	Throwing Disk
@@ -872,9 +984,8 @@ Category ID	Category Name
 117	Tile, Round
 812	Tile, Round, Decorated
 1072	Tim Burton&#39;s Batman
-157	Time Cruisers
+157	Time Cruisers / Twisters
 571	Tiny Turbos
-111	Tire & Tread
 665	Titans
 668	Toa
 669	Toa Hagah
@@ -901,6 +1012,7 @@ Category ID	Category Name
 599	Traffic
 124	Train
 128	Train, Track
+1229	Transformers
 1069	Trolls World Tour
 676	Turaga
 40	Turntable
@@ -909,9 +1021,12 @@ Category ID	Category Name
 811	Ultimate Spider-Man
 815	Ultra Agents
 965	Unikitty!
+1177	Unikitty! Series 1
 312	Unitron
 422	Universal Building Set
+1179	Universal Monsters
 755	Universe
+1218	Upscaled Play Accessories
 677	Vahki
 810	Valentine&#39;s Day
 290	Value Packs
@@ -926,6 +1041,7 @@ Category ID	Category Name
 751	Villains
 678	Visorak
 881	Volcano Explorers
+1255	WALL-E
 667	Warriors
 517	Watch
 1001	Wedding
@@ -935,9 +1051,11 @@ Category ID	Category Name
 1093	Wedge, Plate, Decorated
 634	WeDo
 69	Western
+1238	What If...?
 43	Wheel
 532	Wheel & Tire Assembly
 1027	Wheel, Accessory
+111	Wheel, Tire & Tread
 899	Whisker Haven Tales
 1157	Wildlife Rescue
 693	Williams F1
@@ -949,6 +1067,8 @@ Category ID	Category Name
 579	Windscreen, Decorated
 114	Wing
 298	Winnie The Pooh
+1214	Winter Village Collection
+1284	Wish
 286	Wolfpack
 910	Wonder Woman
 1094	Wonder Woman 1984
