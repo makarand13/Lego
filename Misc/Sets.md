@@ -43,6 +43,7 @@
 | 41335 | Mia's Tree House | 1 | 351 | 2 |
 | 41378 | Dolphin's Rescue Mission | 1 | 363 | 2 |
 | 41391 | Heartlake City Hair Salon | 1 | 235 | 2 |
+| 41701 | Street Food Market | 1 | 592 | 3 |
 | 41903 | Cosmic Wonder | 1 | 33 | 0 |
 | 41905 | Jewelry Stand | 1 | 213 | 0 |
 | 41907 | Dots Desk Organizer | 1 | 405 | 0 |
