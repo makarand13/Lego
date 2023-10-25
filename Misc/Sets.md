@@ -8,7 +8,10 @@
 | 10702 | Creative Classic | 1 | 583 | 0 |
 | 10714 | Blue Baseplate | 1 | 1 | 0 |
 | 11010 | White Baseplate | 1 | 2 | 0|
+| 10278 | Police Station | 1 | 2923 | 5 |
+| 10280 | Flower Bouquet | 1 | 756 | 0 |
 | 30397 | Olafs Summertime Fun | 1 | 48 | 1 |
+| 30570 | Wildlife Rescue Hovercraft | 1 | 35 | 1 |
 | 31014 | Power Digger | 2 | 128 | 0 |
 | 31015 | Emerald Express | 1 | 56 | 0 |
 | 31018 | Highway Cruiser | 1 | 129 | 0 |
@@ -26,6 +29,8 @@
 | 31051 | Lighthouse Point | 1 | 528 | 2 |
 | 31052 | Vacation Getaways | 1 | 792 | 2 |
 | 31063 | Beachside Vacation | 1 | 275 | 2 |
+| 31122 | Fish Tank | 1 | 352 | 0 |
+| 31143 | Birdhouse | 1 | 476 | 0 |
 | 3857 | Dark Bluish Gray Half Baseplate | 1 |
 | 3857 | Green Half Baseplate | 1 |
 | 41062 | Elsas Sparkling Ice Castle | 1 | 292 | 3 |
