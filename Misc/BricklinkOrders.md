@@ -10,7 +10,7 @@
 | 18997185 | Aussie Brickster (AU) | 25-Apr-2022 | 19 | 153 |
 | 17838761 | Itty Bitty Bricks (AU) | 12-Dec-2021 | 64 | 342 |
 | 17629890 | Brick Trove (AU) | 19-Nov-2021 | 58 | 373 |
-| 17629889 | Once Upon A Block (AU) | 19-Nov-2021| 17 | 132 |
+| 17629889 | Once Upon A Block (AU) (LOST) | 19-Nov-2021| 17 | 132 |
 | 17629880 | Itty Bitty Bricks (AU) | 19-Nov-2021 | 146 | 1062 |
 | 14980137 | Itty Bitty Bricks (AU) | 24-Dec-2020 | 71 | 797 |
 | 14980132 | Aussie Brickster (AU) | 24-Dev-2020 | 22 | 483 |
