@@ -1,6 +1,6 @@
 // Lego Inventory Builder
 //
-// Reads all order XML files from an orders folder, cross-references parts
+// Reads all order XML files from a data folder, cross-references parts
 // and minifigures against their respective catalogs plus the colors catalog,
 // aggregates quantities across all orders, and writes two output files:
 //
@@ -16,7 +16,7 @@
 //	│   ├── Parts.xml
 //	│   ├── colors.xml
 //	│   └── Minifigures.xml
-//	├── orders/                 ← drop order XML files here
+//	├── data/                   ← drop order XML files here
 //	└── output/                 ← generated inventory files land here
 //
 // Usage (run from any directory):
@@ -26,7 +26,7 @@
 // Flags (all optional — defaults match the layout above relative to the
 // working directory):
 //
-//	-orders   string   Folder containing order XML files  (default: ./orders)
+//	-data     string   Folder containing order XML files  (default: ./data)
 //	-catalog  string   Folder containing catalog XML files (default: ./catalog)
 //	-out      string   Output folder                       (default: ./output)
 package main
@@ -359,7 +359,7 @@ func formatInt(n int) string {
 // ---------------------------------------------------------------------------
 
 func main() {
-	ordersDir  := flag.String("orders",  "./orders",  "Folder containing order XML files")
+	ordersDir  := flag.String("data",    "./data",    "Folder containing order XML files")
 	catalogDir := flag.String("catalog", "./catalog", "Folder containing catalog XML files")
 	outDir     := flag.String("out",     "./output",  "Output folder")
 	flag.Parse()
@@ -371,7 +371,7 @@ func main() {
 
 	// Validate all required paths exist
 	required := []struct{ path, label string }{
-		{*ordersDir,  "orders folder"},
+		{*ordersDir,  "data folder"},
 		{*catalogDir, "catalog folder"},
 		{partsFile,   "Parts.xml"},
 		{colorsFile,  "colors.xml"},
@@ -403,7 +403,7 @@ func main() {
 	}
 
 	// Process orders
-	fmt.Printf("\nScanning orders in '%s' ...\n", *ordersDir)
+	fmt.Printf("\nScanning data folder '%s' ...\n", *ordersDir)
 	agg, filesRead, err := processOrders(*ordersDir)
 	if err != nil {
 		log.Fatalf("ERROR processing orders: %v", err)
