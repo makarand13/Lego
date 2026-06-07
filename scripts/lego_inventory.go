@@ -98,23 +98,37 @@ func loadColors(path string) (map[string]string, error) {
 	return m, nil
 }
 
-// loadNameCatalog streams an XML catalog file that has <ITEMID> / <ITEMNAME>
-// elements. It uses a token-based parser so it works efficiently on large
-// files (e.g. Parts.xml ~26 MB).
-func loadNameCatalog(path, label string) (map[string]string, error) {
+// catalogData holds the results of parsing a name catalog.
+type catalogData struct {
+	// names maps canonical ITEMID -> ITEMNAME.
+	names map[string]string
+	// aliases maps every archived/alternate ID -> canonical ITEMID.
+	// e.g. "3068b" -> "3068", "1136" -> "3068", etc.
+	aliases map[string]string
+}
+
+// loadNameCatalog streams an XML catalog file that has <ITEMID>, <ITEMNAME>,
+// and <ALTITEMIDS> elements. It uses a token-based parser so it works
+// efficiently on large files (e.g. Parts.xml ~26 MB).
+//
+// Returns a catalogData with:
+//   - names:   {canonicalID -> itemName}
+//   - aliases: {altID -> canonicalID}  (built from comma-separated ALTITEMIDS)
+func loadNameCatalog(path, label string) (catalogData, error) {
 	fmt.Printf("  Loading %-12s: %s ... ", label, path)
 
 	f, err := os.Open(path)
 	if err != nil {
-		return nil, err
+		return catalogData{}, err
 	}
 	defer f.Close()
 
-	m := make(map[string]string, 100_000)
-	dec := xml.NewDecoder(f)
+	names   := make(map[string]string, 100_000)
+	aliases := make(map[string]string, 50_000)
+	dec     := xml.NewDecoder(f)
 
 	var inItem bool
-	var itemID, itemName, curField string
+	var itemID, itemName, altItemIDs, curField string
 
 	for {
 		tok, err := dec.Token()
@@ -122,7 +136,7 @@ func loadNameCatalog(path, label string) (map[string]string, error) {
 			break
 		}
 		if err != nil {
-			return nil, err
+			return catalogData{}, err
 		}
 
 		switch t := tok.(type) {
@@ -130,8 +144,8 @@ func loadNameCatalog(path, label string) (map[string]string, error) {
 			switch t.Name.Local {
 			case "ITEM":
 				inItem = true
-				itemID, itemName, curField = "", "", ""
-			case "ITEMID", "ITEMNAME":
+				itemID, itemName, altItemIDs, curField = "", "", "", ""
+			case "ITEMID", "ITEMNAME", "ALTITEMIDS":
 				if inItem {
 					curField = t.Name.Local
 				}
@@ -145,6 +159,8 @@ func loadNameCatalog(path, label string) (map[string]string, error) {
 					itemID = val
 				case "ITEMNAME":
 					itemName = val
+				case "ALTITEMIDS":
+					altItemIDs = val
 				}
 				curField = ""
 			}
@@ -152,15 +168,31 @@ func loadNameCatalog(path, label string) (map[string]string, error) {
 		case xml.EndElement:
 			if t.Name.Local == "ITEM" && inItem {
 				if itemID != "" {
-					m[itemID] = itemName
+					names[itemID] = itemName
+					// Parse comma-separated alternate IDs, map each -> canonical
+					for _, alt := range strings.Split(altItemIDs, ",") {
+						alt = strings.TrimSpace(alt)
+						if alt != "" && alt != itemID {
+							aliases[alt] = itemID
+						}
+					}
 				}
 				inItem = false
 			}
 		}
 	}
 
-	fmt.Printf("%d entries\n", len(m))
-	return m, nil
+	fmt.Printf("%d entries, %d aliases\n", len(names), len(aliases))
+	return catalogData{names: names, aliases: aliases}, nil
+}
+
+// resolveID returns the canonical item ID, following the alias map if the
+// raw id is an archived alternate. Falls back to the raw id if not found.
+func resolveID(id string, aliases map[string]string) string {
+	if canonical, ok := aliases[id]; ok {
+		return canonical
+	}
+	return id
 }
 
 // ---------------------------------------------------------------------------
@@ -177,7 +209,7 @@ type aggregated struct {
 	minifs map[itemColorKey]int // ITEMTYPE M
 }
 
-func processOrders(ordersFolder string) (aggregated, []string, error) {
+func processOrders(ordersFolder string, partAliases, minifAliases map[string]string) (aggregated, []string, error) {
 	entries, err := os.ReadDir(ordersFolder)
 	if err != nil {
 		return aggregated{}, nil, fmt.Errorf("cannot read orders folder: %w", err)
@@ -188,6 +220,7 @@ func processOrders(ordersFolder string) (aggregated, []string, error) {
 		minifs: make(map[itemColorKey]int),
 	}
 	var filesRead []string
+	totalResolved := 0
 
 	for _, entry := range entries {
 		if entry.IsDir() || !strings.EqualFold(filepath.Ext(entry.Name()), ".xml") {
@@ -211,7 +244,7 @@ func processOrders(ordersFolder string) (aggregated, []string, error) {
 		}
 		f.Close()
 
-		parts, minifs := 0, 0
+		parts, minifs, resolved := 0, 0, 0
 		for _, item := range inv.Items {
 			id  := strings.TrimSpace(item.ItemID)
 			cid := strings.TrimSpace(item.ColorID)
@@ -222,17 +255,29 @@ func processOrders(ordersFolder string) (aggregated, []string, error) {
 			if id == "" {
 				continue
 			}
-			key := itemColorKey{id, cid}
-			switch strings.ToUpper(strings.TrimSpace(item.ItemType)) {
+
+			itemType := strings.ToUpper(strings.TrimSpace(item.ItemType))
+			switch itemType {
 			case "M":
-				agg.minifs[key] += qty
+				canonical := resolveID(id, minifAliases)
+				if canonical != id {
+					fmt.Printf("    aliased minifig : %s -> %s\n", id, canonical)
+					resolved++
+				}
+				agg.minifs[itemColorKey{canonical, cid}] += qty
 				minifs++
 			default: // "P" and anything else treated as a part
-				agg.parts[key] += qty
+				canonical := resolveID(id, partAliases)
+				if canonical != id {
+					fmt.Printf("    aliased part    : %s -> %s\n", id, canonical)
+					resolved++
+				}
+				agg.parts[itemColorKey{canonical, cid}] += qty
 				parts++
 			}
 		}
-		fmt.Printf("    %d part line item(s), %d minifigure line item(s)\n", parts, minifs)
+		fmt.Printf("    %d part(s), %d minifigure(s), %d alias(es) resolved\n", parts, minifs, resolved)
+		totalResolved += resolved
 		filesRead = append(filesRead, entry.Name())
 	}
 
@@ -240,8 +285,8 @@ func processOrders(ordersFolder string) (aggregated, []string, error) {
 		return aggregated{}, nil, fmt.Errorf("no XML files found in '%s'", ordersFolder)
 	}
 
-	fmt.Printf("\n%d order file(s) processed — %d unique part combinations, %d unique minifigure combinations\n",
-		len(filesRead), len(agg.parts), len(agg.minifs))
+	fmt.Printf("\n%d order file(s) processed — %d unique part combinations, %d unique minifigure combinations, %d total alias(es) resolved\n",
+		len(filesRead), len(agg.parts), len(agg.minifs), totalResolved)
 	return agg, filesRead, nil
 }
 
@@ -393,25 +438,25 @@ func main() {
 	if err != nil {
 		log.Fatalf("ERROR loading colors: %v", err)
 	}
-	partMap, err := loadNameCatalog(partsFile, "parts")
+	partCatalog, err := loadNameCatalog(partsFile, "parts")
 	if err != nil {
 		log.Fatalf("ERROR loading parts: %v", err)
 	}
-	minifMap, err := loadNameCatalog(minifsFile, "minifigures")
+	minifCatalog, err := loadNameCatalog(minifsFile, "minifigures")
 	if err != nil {
 		log.Fatalf("ERROR loading minifigures: %v", err)
 	}
 
-	// Process orders
+	// Process orders (archived IDs are resolved to canonical via alias maps)
 	fmt.Printf("\nScanning data folder '%s' ...\n", *ordersDir)
-	agg, filesRead, err := processOrders(*ordersDir)
+	agg, filesRead, err := processOrders(*ordersDir, partCatalog.aliases, minifCatalog.aliases)
 	if err != nil {
 		log.Fatalf("ERROR processing orders: %v", err)
 	}
 
-	// Build rows
-	partRows  := buildRows(agg.parts,  partMap,  colorMap)
-	minifRows := buildRows(agg.minifs, minifMap, colorMap)
+	// Build rows (all IDs in agg are already canonical at this point)
+	partRows  := buildRows(agg.parts,  partCatalog.names,  colorMap)
+	minifRows := buildRows(agg.minifs, minifCatalog.names, colorMap)
 
 	// Write parts output
 	fmt.Println("\nWriting parts inventory ...")
